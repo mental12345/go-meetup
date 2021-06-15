@@ -1,8 +1,8 @@
-module github.com/mental12345/gok8s
+module github.com/mental12345/go-meetup
 
 go 1.14
 
 require (
 	github.com/urfave/cli v1.22.5
-	k8s.io/client-go v0.20.2 // indirect
+	k8s.io/client-go v0.20.2
 )
