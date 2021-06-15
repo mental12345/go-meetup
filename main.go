@@ -5,6 +5,7 @@ import (
   "github.com/urfave/cli"
   "os"
   "log"
+  "github.com/mental12345/go-meetup/k8s"
 )
 
 func main() {
@@ -23,6 +24,15 @@ func main() {
         jobCmd := c.Args().Get(2)
         fmt.Println("Hello one")
         fmt.Println(jobName, jobImage, jobCmd)
+      },
+    },
+    {
+      Name: "job2",
+      Aliases: []string{"j2"},
+      Usage: "this is a second test",
+      Action: func(c *cli.Context) {
+        k8s.K8sConfig()
+        fmt.Println("Hello two")
       },
     },
   }
