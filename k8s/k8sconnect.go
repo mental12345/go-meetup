@@ -17,7 +17,6 @@ func K8sConfig() (*kubernetes.Clientset, error) {
 	
 	var config *rest.Config
 	
-	_, err := os.Stat(defaultCfg); err == nil {
 	//Outside cluster access
 	config, err := clientcmd.BuildConfigFromFlags("", defaultCfg)
 	if err != nil {
@@ -29,4 +28,5 @@ func K8sConfig() (*kubernetes.Clientset, error) {
 		log.Fatal(err)
 		return nil, err
 	}
+	return clientset, nil 
 }
